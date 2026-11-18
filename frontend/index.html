@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Expert check of automatic CBT session labels." />
+    <title>CBT Annotation Check</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#/" aria-label="CBT Annotation Check home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>CBT Annotation Check</span>
+      </a>
+      <div class="header-right" id="header-right"></div>
+    </header>
+
+    <main id="app" aria-live="polite"><p class="loading">Loading…</p></main>
+
+    <dialog class="dialog" id="guide-dialog" aria-labelledby="guide-title">
+      <header class="dialog-head">
+        <h2 id="guide-title">Guide</h2>
+        <button class="icon-button" type="button" data-close aria-label="Close guide">×</button>
+      </header>
+      <div class="dialog-body guide">
+        <p>Every therapist turn in these sessions has been labelled automatically with two labels. Your task is to mark the labels you think are wrong.</p>
+        <h3>The two labels</h3>
+        <ul>
+          <li><b>Macro action:</b> the therapist's overall strategy in that part of the session, for example assessment and case formulation, or cognitive restructuring. It is the same for consecutive turns that belong to the same part of the session.</li>
+          <li><b>Micro action:</b> the specific therapeutic move in that turn, for example a validating reflection or a Socratic question. <b>None</b> means that no specific move applies (for example “Mm-hmm”).</li>
+        </ul>
+        <h3>What to do</h3>
+        <ol>
+          <li>Read the session. Patient turns are shown for context only.</li>
+          <li>On each therapist turn, check both labels. Click a turn to see the definitions of its labels.</li>
+          <li>If a label is wrong, tick <b>Macro action is wrong</b> and/or <b>Micro action is wrong</b>. You can add a short note, for example the label you would choose.</li>
+          <li>Leave correct turns unmarked: they are counted as correct. When you have checked the whole session, submit it.</li>
+        </ol>
+      </div>
+    </dialog>
+
+    <dialog class="dialog" id="info-dialog" aria-labelledby="info-title">
+      <header class="dialog-head">
+        <h2 id="info-title">Session information</h2>
+        <button class="icon-button" type="button" data-close aria-label="Close session information">×</button>
+      </header>
+      <div class="dialog-body" id="info-body"></div>
+    </dialog>
+
+    <div class="toast hidden" id="toast" role="status"></div>
+
+    <script src="./config.js"></script>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
